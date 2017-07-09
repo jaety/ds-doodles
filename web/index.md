@@ -11,5 +11,6 @@ For today's exercise, finding some interesting data. Little bit of googling arou
 
 The World Bank has a detailed API, and Oliver Sherouse has been kind enough to write a Python wrapper around it. http://wbdata.readthedocs.io/en/latest/
 
+* note that wbdata.get_indicator? in a notebook, is massively powerful. Drastically changes my workflow. (Admittedly more when you're getting to know a new library)
 
 Separately, I'm going to start this little static, markdown based blog. Rendering pipeline for that.
