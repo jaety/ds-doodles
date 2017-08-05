@@ -13,6 +13,7 @@ Re-envisioning the pipeline.
 1. I need a space to find & investigate data. As a starting point, use pandas + wbdata + notebook from previous exploration. This lets me find individual indicators. 03_DataPipeline.
 2. Now, I want an isolation layer between my work environment and outside sources, so I need a way to register indicators into my own space. Started creating 'domain' in lib to represent this. Very much a placeholder. Need to talk about, for instance, row level security, and how these are propagated into different languages.
 3. For lightweight manipulation in scala, I found Framian https://github.com/tixxit/framian/wiki/Framian-Guide. We can look at spark, but I'd like something lighterweight for now while just messing around. [Quick introduction (and other comparisons here)](https://darrenjw.wordpress.com/tag/framian/)
+4. Framian didn't really go anywhere. Turned to spark, and it's up and running. I had to compile the Country case class outside of the notebook, so that it was an outer class. Took a long while to figure out how to add the cwd to the classpath. Took longer to realize I'd compiled Country.scala against the wrong version of scala. It needed to be 2.11 to match jupyter-scala's spark
 
 ## 7/9/17
 For today's exercise, finding some interesting data. Little bit of googling around took me to this page: https://www.dataquest.io/blog/free-datasets-for-projects/ and, mostly at random, decided to look into the World Bank (#12)
