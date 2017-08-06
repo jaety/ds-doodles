@@ -14,10 +14,10 @@ def world_bank(indicator):
     codes = domain.countries.set_index('iso2')['id']
     data = wbdata.get_data(indicator)
     index = pd.MultiIndex.from_tuples([(codes[x['country']['id']], int(x['date'])) for x in data], names=["country", "year"])
-    return pd.Series([to_float(x['value']) for x in data], index=index).sort_index()
+    return pd.Series([to_float(x['value']) for x in data], index=index, name=indicator.replace(".","_")).sort_index()
 
 def ingest_world_bank(indicator, dest=None):
     dest = dest if not dest == None else os.path.join(dest_dir, indicator + ".parquet")
-    df = world_bank(indicator, name)
+    df = world_bank(indicator)
     fp.write(dest, df)
     return df
