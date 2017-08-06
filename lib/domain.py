@@ -1,9 +1,9 @@
-import iso3166
+import wbdata
 import pandas as pd
-
+import domain
 
 def _build_countries():
-    data = [{'name': c.name, 'code': c.alpha3, 'code2': c.alpha2, 'numeric': int(c.numeric)} for c in iso3166.countries]
-    return pd.DataFrame(data, index = [d["code"] for d in data])
+    countries = wbdata.get_country(display=False)
+    return pd.DataFrame([{"id": x['id'], 'iso2': x['iso2Code'], 'name': x['name']} for x in countries], index=[x['id'] for x in countries])
 
 countries = _build_countries()
