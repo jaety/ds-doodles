@@ -6,6 +6,15 @@ The heart of data science certainly hasn't changed
 * Analyze to Find Insights
 * Write about those insights
 
+## 8/8/17
+
+* TODO: resample takes '5Min' in this example: https://pandas.pydata.org/pandas-docs/stable/timeseries.html#up-sampling but I can find
+  no documentation that explains what's possible. Can I do a decade for instance? 10A works
+
+## 8/7/17
+
+* Learned today that Pandas supports rich Period math
+
 ## 8/5/17
 
 * The World Bank is easily accessible from Python. Someone's done all the work already. Does it make sense that we should have to pull it into Scala? Hypothesis: Let's truly, natively support polyglot.
